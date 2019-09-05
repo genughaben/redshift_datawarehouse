@@ -9,7 +9,7 @@ In .aws enter your:
 It will be loaded in config.py.
 
 Use Notebook "ETL - Execute and inspect.ipynb" to setup AWS resources, execute ETL and inspect the resulting DWH.
-After "SETUP" and before "EXECUTE" make sure to update DWH_END
+After "SETUP" and before "EXECUTE" make sure to update DWH_ENDPOINT, DWH_ROLE_ARN and HOST.
 
 
 ### Description
@@ -25,7 +25,6 @@ The final star schema consists of the following tables:
 * time (dimension table)
 
 Its full description can be viewed in its respective CREATE TABLE statements in sql_queries.py.
-
 
 ### Structure
 

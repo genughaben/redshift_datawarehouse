@@ -235,11 +235,15 @@ class RedshiftCluster:
         print(f"Cluster {self.DWH_CLUSTER_IDENTIFIER} is offline.")
 
 
-    def delete_role(self):
+    def delete_role(self, DWH_IAM_ROLE_NAME=None):
         '''
         Deletes IAM role.
         :return:
         '''
+
+        if DWH_IAM_ROLE_NAME is not None:
+            self.DWH_IAM_ROLE_NAME = DWH_IAM_ROLE_NAME
+
         self.iam.detach_role_policy(
             RoleName=self.DWH_IAM_ROLE_NAME,
             PolicyArn="arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess"
